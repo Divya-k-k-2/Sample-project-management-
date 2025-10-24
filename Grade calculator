@@ -1,0 +1,49 @@
+# grade_calculator.py
+# A simple Python program to calculate total marks, percentage, and grade.
+
+def calculate_grade(percentage):
+    """Function to determine grade based on percentage"""
+    if percentage >= 90:
+        return "A+"
+    elif percentage >= 80:
+        return "A"
+    elif percentage >= 70:
+        return "B+"
+    elif percentage >= 60:
+        return "B"
+    elif percentage >= 50:
+        return "C"
+    elif percentage >= 40:
+        return "D"
+    else:
+        return "F (Fail)"
+
+
+def main():
+    print("=== Grade Calculator ===")
+
+    # Input: number of subjects
+    num_subjects = int(input("Enter the number of subjects: "))
+
+    marks = []
+    for i in range(num_subjects):
+        mark = float(input(f"Enter marks for subject {i+1}: "))
+        marks.append(mark)
+
+    # Processing
+    total = sum(marks)
+    percentage = total / num_subjects
+
+    # Output
+    grade = calculate_grade(percentage)
+
+    print("\n----- Result -----")
+    print(f"Total Marks: {total:.2f}")
+    print(f"Percentage: {percentage:.2f}%")
+    print(f"Grade: {grade}")
+    print("------------------")
+
+
+if __name__ == "__main__":
+    main()
+
